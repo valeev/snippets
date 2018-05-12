@@ -1,5 +1,6 @@
 # Common Contracts snippets
 Snippets for creating default CRUD requests and responses using [Common.Contracts](https://github.com/valeev/Common "Common.Contracts") 
+Visual Studio extension available here in [marketplace](https://marketplace.visualstudio.com/items?itemName=valeev.commoncontracts "marketplace") 
 
 # List of snippet commands
 
