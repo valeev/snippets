@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+	<CodeSnippet Format="1.0.0">  
+		<Header>  
+			<Title>Get all records request</Title>  
+			<Shortcut>getsreq</Shortcut>
+			<Author>Dmitry Valeev</Author>
+			<Description>Request for contracts project for getting all records</Description>
+		</Header>  
+		<Snippet>
+			<Imports>
+				<Import>  
+					<Namespace>Common.Contracts</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>ClassName</ID>
+					<ToolTip>Replace with specified name</ToolTip>
+					<Default>Record</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+<![CDATA[ 
+    /// <summary>
+    /// Request for getting all records
+    /// </summary>
+    public class Get$ClassName$sRequest : ServiceRequest
+    {
+        #region Properties
+
+        /// <summary>
+        /// Search string
+        /// </summary>
+        public string Search { get; set; }
+
+        /// <summary>
+        /// Sort by field
+        /// Possible values: fieldName_desk, fieldName_asc, fieldName
+        /// </summary>
+        public string SortBy { get; set; }
+
+        /// <summary>
+        /// Amount of records for taking
+        /// </summary>
+        public int Limit { get; set; }
+
+        /// <summary>
+        /// Amount of records for skipping
+        /// </summary>
+        public int Skip { get; set; }
+
+        /// <summary>
+        /// Page with records
+        /// </summary>
+        public int Page { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Get$ClassName$sRequest()
+        {
+            Limit = SystemConstants.DefaultPageSize;
+        }
+
+        #endregion
+    }
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

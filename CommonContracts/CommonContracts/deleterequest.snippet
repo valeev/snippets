@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+	<CodeSnippet Format="1.0.0">  
+		<Header>  
+			<Title>Delete request</Title>  
+			<Shortcut>delreq</Shortcut>
+			<Author>Dmitry Valeev</Author>
+			<Description>Request for contracts project for deleting record</Description>
+		</Header>  
+		<Snippet>
+			<Imports>
+				<Import>  
+					<Namespace>Common.Contracts</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>ClassName</ID>
+					<ToolTip>Replace with specified name</ToolTip>
+					<Default>Record</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+<![CDATA[ 
+	/// <summary>
+    /// Request for deleting record
+    /// </summary>
+    public class Delete$ClassName$Request : ServiceRequest
+    {
+        #region Properties
+
+        /// <summary>
+        /// Id of the record
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Should be deleted from DB
+        /// </summary>
+        public bool IsPhysicalDelete { get; set; }
+
+        #endregion
+    }
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

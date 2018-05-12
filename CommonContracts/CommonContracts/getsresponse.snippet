@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+	<CodeSnippet Format="1.0.0">  
+		<Header>  
+			<Title>Get all records response</Title>  
+			<Shortcut>getsres</Shortcut>
+			<Author>Dmitry Valeev</Author>
+			<Description>Response for contracts project to getting all records</Description>
+		</Header>  
+		<Snippet>
+			<Imports>
+				<Import>  
+					<Namespace>Common.Contracts</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>ClassName</ID>
+					<ToolTip>Replace with specified name</ToolTip>
+					<Default>Record</Default>
+				</Literal>
+				<Literal Editable="true">
+					<ID>Records</ID>
+					<ToolTip>Replace with list of records</ToolTip>
+					<Default>records</Default>
+				</Literal> 
+			</Declarations>
+			<Code Language="CSharp">
+<![CDATA[ 
+    /// <summary>
+    /// Response to getting all records
+    /// </summary>
+    public class Get$ClassName$sResponse : ServiceResponse
+    {
+        #region Properties
+
+        /// <summary>
+        /// Amount of records which was skipped
+        /// </summary>
+        public int Skipped { get; set; }
+
+        /// <summary>
+        /// Amount of records which was taken
+        /// </summary>
+        public int Limit { get; set; }
+
+        /// <summary>
+        /// Total amount of records
+        /// </summary>
+        public int TotalAmount { get; set; }
+
+        /// <summary>
+        /// $ClassName$
+        /// </summary>
+        public List<$ClassName$DTO> $ClassName$s { set; get; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Default constructor with all parameters
+        /// </summary>
+        public Get$ClassName$sResponse(int skipped, int limit, int totalAmount, List<$ClassName$DTO> $Records$, TimeSpan elapsedTime, ServiceStatus serviceStatus, string errorCode, string errorMessage)
+            : base(elapsedTime, serviceStatus, errorCode, errorMessage)
+        {
+            Skipped = skipped;
+            Limit = limit;
+            TotalAmount = totalAmount;
+            $ClassName$s = $Records$;
+        }
+
+        #endregion
+    }
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

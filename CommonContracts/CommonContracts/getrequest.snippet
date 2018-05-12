@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+	<CodeSnippet Format="1.0.0">  
+		<Header>  
+			<Title>Get by id request</Title>  
+			<Shortcut>getreq</Shortcut>
+			<Author>Dmitry Valeev</Author>
+			<Description>Request for contracts project for getting record by id</Description>
+		</Header>  
+		<Snippet>
+			<Imports>
+				<Import>  
+					<Namespace>Common.Contracts</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>ClassName</ID>
+					<ToolTip>Replace with specified name</ToolTip>
+					<Default>Record</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+<![CDATA[ 
+    /// <summary>
+    /// Request for getting record
+    /// </summary>
+    public class Get$ClassName$Request : ServiceRequest
+    {
+        #region Properties
+
+        /// <summary>
+        /// Id of the record
+        /// </summary>
+        public int Id { set; get; }
+
+        #endregion
+    }
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

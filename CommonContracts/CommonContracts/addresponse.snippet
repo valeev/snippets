@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+	<CodeSnippet Format="1.0.0">  
+		<Header>  
+			<Title>Add response</Title>  
+			<Shortcut>addres</Shortcut>
+			<Author>Dmitry Valeev</Author>
+			<Description>Response for contracts project to adding record</Description>
+		</Header>  
+		<Snippet>
+			<Imports>
+				<Import>  
+					<Namespace>Common.Contracts</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>ClassName</ID>
+					<ToolTip>Replace with specified name</ToolTip>
+					<Default>Record</Default>
+				</Literal>
+				<Literal>
+					<ID>Record</ID>
+					<ToolTip>Replace with specified record</ToolTip>
+					<Default>record</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+<![CDATA[ 
+    /// <summary>
+    /// Response to adding record
+    /// </summary>
+    public class Add$ClassName$Response : ServiceResponse
+    {
+        #region Properties
+
+        /// <summary>
+        /// $ClassName$
+        /// </summary>
+        public $ClassName$DTO $ClassName$ { set; get; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Default constructor with all parameters
+        /// </summary>
+        public Add$ClassName$Response($ClassName$DTO $Record$, TimeSpan elapsedTime, ServiceStatus serviceStatus, string errorCode, string errorMessage)
+            : base(elapsedTime, serviceStatus, errorCode, errorMessage)
+        {
+            $ClassName$ = $Record$;
+        }
+
+        #endregion
+    }
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

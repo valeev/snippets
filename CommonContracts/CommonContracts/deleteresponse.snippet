@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+	<CodeSnippet Format="1.0.0">  
+		<Header>  
+			<Title>Delete response</Title>  
+			<Shortcut>delres</Shortcut>
+			<Author>Dmitry Valeev</Author>
+			<Description>Response for contracts project to deleting record</Description>
+		</Header>  
+		<Snippet>
+			<Imports>
+				<Import>  
+					<Namespace>Common.Contracts</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>ClassName</ID>
+					<ToolTip>Replace with specified name</ToolTip>
+					<Default>Record</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+<![CDATA[ 
+    /// <summary>
+    /// Response to deleting record
+    /// </summary>
+    public class Delete$ClassName$Response : ServiceResponse
+    {
+        #region Properties
+
+
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Default constructor with all parameters
+        /// </summary>
+        public Delete$ClassName$Response(TimeSpan elapsedTime, ServiceStatus serviceStatus, string errorCode, string errorMessage)
+            : base(elapsedTime, serviceStatus, errorCode, errorMessage)
+        {
+
+        }
+
+        #endregion
+    }
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
